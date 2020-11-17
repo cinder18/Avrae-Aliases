@@ -9,7 +9,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Bug]"
+            "damage": "DAMAGE+{DMO}[Bug]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -22,12 +22,12 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonusDMO",
     "damage": {
-      "1": "1d12+{max(DMO,DMO)}",
-      "5": "2d8+{max(DMO,DMO)}",
-      "10": "2d12+{max(DMO,DMO)}",
-      "17": "6d6+{max(DMO,DMO)}"
+      "1": "1d12",
+      "5": "2d8",
+      "10": "2d12",
+      "17": "6d6"
     },
     "PP": 3
   },
@@ -56,11 +56,11 @@
           "stat": "con",
           "fail": [{
             "type": "damage",
-            "damage": "DAMAGE[Normal]",
+            "damage": "DAMAGE+{max(SMO,DMO)}[Normal]",
             "overheal": false
           }],
           "success": [],
-          "dc": "{8+proficiencyBonus+max(SMO,DMO)}"
+          "dc": "{8+ATTACK}"
         }]
       }],
       "verb": null,
@@ -68,11 +68,12 @@
       "_v": 2
     },
     "damage": {
-      "1": "2d8+{max(SMO,DMO)}",
-      "5": "2d10+{max(SMO,DMO)}",
-      "10": "3d10+{max(SMO,DMO)}",
-      "17": "4d12+{max(SMO,DMO)}"
+      "1": "2d8",
+      "5": "2d10",
+      "10": "3d10",
+      "17": "4d12"
     },
+    "attack": "proficiencyBonus+max(SMO,DMO)",
     "PP": 5
   },
   "V-Create": {
@@ -111,12 +112,12 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "3d10+{max(SMO,DMO)}",
-      "5": "6d6+{max(SMO,DMO)}",
-      "10": "8d6+{max(SMO,DMO)}",
-      "17": "7d12+{max(SMO,DMO)}"
+      "1": "3d10",
+      "5": "6d6",
+      "10": "8d6",
+      "17": "7d12"
     },
-    "PP": 3
+    "PP": 10
   },
   "Vacuum Wave": {
     "code": {
@@ -141,7 +142,7 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonus+DMO",
     "damage": {
       "1": "1d4",
       "5": "1d6",
@@ -167,7 +168,7 @@
             "end": false
           }],
           "success": [],
-          "dc": "{8+proficiencyBonus+max(DMO,CoMO)}"
+          "dc": "{8+ATTACK}"
         }]
       }, {
         "type": "text",
@@ -177,6 +178,7 @@
       "proper": true,
       "verb": null
     },
+    "attack": "proficiencyBonus+max(DMO,CoMO)"
     "PP": 10
   },
   "Venoshock": {
@@ -189,7 +191,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Poison]"
+            "damage": "DAMAGE+{max(DMO,CoMO)}[Poison]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -204,10 +206,10 @@
     },
     "attack": "proficiencyBonus+max(DMO,CoMO)",
     "damage": {
-      "1": "1d10+{max(DMO,CoMO)}",
-      "5": "2d6+{max(DMO,CoMO)}",
-      "10": "2d12+{max(DMO,CoMO)}",
-      "17": "3d10+{max(DMO,CoMO)}"
+      "1": "1d10",
+      "5": "2d6",
+      "10": "2d12",
+      "17": "3d10"
     },
     "PP": 5
   },
@@ -221,7 +223,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Normal]"
+            "damage": "DAMAGE+{SMO}[Normal]"
           }, {
             "type": "save",
             "stat": "str",
@@ -233,7 +235,7 @@
               "end": false
             }],
             "succes": [],
-            "dc": "{8+proficiencyBonus+SMO}"
+            "dc": "{8+ATTACK}"
           },
           "miss": [],
           "attackBonus": "ATTACK"
@@ -246,12 +248,12 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "1d8+{max(SMO,SMO)}",
-      "5": "2d6+{max(SMO,SMO)}",
-      "10": "4d4+{max(SMO,SMO)}",
-      "17": "3d10+{max(SMO,SMO)}"
+      "1": "1d8",
+      "5": "2d6",
+      "10": "4d4",
+      "17": "3d10"
     },
     "PP": 15
   },
@@ -265,7 +267,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Grass]"
+            "damage": "DAMAGE+{max(SMO,DMO)}[Grass]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -280,10 +282,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "1d6+{max(SMO,DMO)}",
-      "5": "1d12+{max(SMO,DMO)}",
-      "10": "2d8+{max(SMO,DMO)}",
-      "17": "4d6+{max(SMO,DMO)}"
+      "1": "1d6",
+      "5": "1d12",
+      "10": "2d8",
+      "17": "4d6"
     },
     "PP": 15
   },
@@ -297,24 +299,24 @@
           "type": "ieffect",
           "name": "Held attack",
           "duration": "2",
-          "effects": "-attack \"|1d12+{SMO} [Fighting]|\"",
+          "effects": "-attack \"|DAMAGE+{SMO} [Fighting]|\"",
           "end": true,
           "conc": false
         }]
       }, {
         "type": "text",
-        "text": "A slow fighting attack that pummels your foes. As an action on your turn, you can choose to hold this move until next turn, where it will automatically hit for 1d12 + MOVE fighting damage as long as the target remains in melee range."
+        "text": "A slow fighting attack that pummels a creature. As an action on your turn, you can choose to hold this move until next turn, where it will automatically hit for 1d12 + MOVE fighting damage as long as the target remains in melee range."
       }],
       "verb": "foresees the future with",
       "proper": true,
       "_v": 2
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "1d12+{max(SMO,SMO)}",
-      "5": "2d8+{max(SMO,SMO)}",
-      "10": "2d12+{max(SMO,SMO)}",
-      "17": "6d6+{max(SMO,SMO)}"
+      "1": "1d12",
+      "5": "2d8",
+      "10": "2d12",
+      "17": "6d6"
     },
     "PP": 5
   },
@@ -328,7 +330,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE [Electric]",
+            "damage": "DAMAGE+{DMO}[Electric]",
             "overheal": false,
             "higher": null,
             "cantripScale": null
@@ -344,12 +346,12 @@
       "proper": false,
       "_v": 2
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonus+DMO",
     "damage": {
-      "1": "1d12+{max(DMO,DMO)}",
-      "5": "2d8+{max(DMO,DMO)}",
-      "10": "2d12+{max(DMO,DMO)}",
-      "17": "6d6+{max(DMO,DMO)}"
+      "1": "1d12",
+      "5": "2d8",
+      "10": "2d12",
+      "17": "6d6"
     },
     "PP": 3
   },
@@ -363,14 +365,14 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Electric]"
+            "damage": "DAMAGE+{max(SMO,DMO)}[Electric]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
         }]
       }, {
         "type": "text",
-        "text": "You rush forward in a flash of electricity with extended reach, slamming into a creatuew. When activating this move, gain an additional 15 feet of movement and make a melee attack roll against an opponent, dealing 2d10 + Move electric damage on a hit. On a hit, you also take a quarter of the total (rounded down) in typeless recoil damage."
+        "text": "You rush forward in a flash of electricity with extended reach, slamming into a creature. When activating this move, gain an additional 15 feet of movement and make a melee attack roll against an opponent, dealing 2d10 + Move electric damage on a hit. On a hit, you also take a quarter of the total (rounded down) in typeless recoil damage."
       }],
       "_v": 2,
       "proper": true,
@@ -378,10 +380,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "2d10+{max(SMO,DMO)}",
-      "5": "3d8+{max(SMO,DMO)}",
-      "10": "4d10+{max(SMO,DMO)}",
-      "17": "7d8+{max(SMO,DMO)}"
+      "1": "2d10",
+      "5": "3d8",
+      "10": "4d10",
+      "17": "7d8"
     },
     "PP": 10
   },
@@ -395,7 +397,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Fighting]",
+            "damage": "DAMAGE+{max(SMO,DMO)}[Fighting]",
             "overheal": false,
             "higher": null,
             "cantripScale": null
@@ -413,10 +415,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "1d12+{max(SMO,DMO)}",
-      "5": "2d8+{max(SMO,DMO)}",
-      "10": "2d12+{max(SMO,DMO)}",
-      "17": "6d6+{max(SMO,DMO)}"
+      "1": "1d12",
+      "5": "2d8",
+      "10": "2d12",
+      "17": "6d6"
     },
     "PP": 5
   },
@@ -430,7 +432,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]",
+            "damage": "DAMAGE+{DMO}[Water]",
             "overheal": false,
             "higher": null,
             "cantripScale": null
@@ -446,12 +448,12 @@
       "proper": false,
       "_v": 2
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonus+DMO",
     "damage": {
-      "1": "1d6+{max(DMO,DMO)}",
-      "5": "1d12+{max(DMO,DMO)}",
-      "10": "2d8+{max(DMO,DMO)}",
-      "17": "4d6+{max(DMO,DMO)}"
+      "1": "1d6",
+      "5": "1d12",
+      "10": "2d8",
+      "17": "4d6"
     },
     "PP": 15
   },
@@ -465,7 +467,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]"
+            "damage": "DAMAGE+{SMO}[Water]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -478,12 +480,12 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "2d6+{max(SMO,SMO)}",
-      "5": "2d8+{max(SMO,SMO)}",
-      "10": "4d6+{max(SMO,SMO)}",
-      "17": "6d6+{max(SMO,SMO)}"
+      "1": "2d6",
+      "5": "2d8",
+      "10": "4d6",
+      "17": "6d6"
     },
     "PP": 5
   },
@@ -497,7 +499,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]",
+            "damage": "DAMAGE+{DMO}[Water]",
             "overheal": false
           }],
           "miss": [],
@@ -511,12 +513,12 @@
       "proper": false,
       "_v": 2
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonus+DMO",
     "damage": {
-      "1": "1d10+{max(DMO,DMO)}",
-      "5": "2d8+{max(DMO,DMO)}",
-      "10": "5d4+{max(DMO,DMO)}",
-      "17": "4d8+{max(DMO,DMO)}"
+      "1": "1d10",
+      "5": "2d8",
+      "10": "5d4",
+      "17": "4d8"
     },
     "PP": 10
   },
@@ -538,7 +540,7 @@
           }],
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]",
+            "damage": "DAMAGE+{DMO}[Water]",
             "overheal": false,
             "higher": null,
             "cantripScale": null
@@ -554,7 +556,7 @@
       "proper": true,
       "_v": 2
     },
-    "attack": "proficiencyBonus+max(DMO,DMO)",
+    "attack": "proficiencyBonus+DMO",
     "damage": {
       "1": "1d4",
       "5": "1d6",
@@ -597,7 +599,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]"
+            "damage": "DAMAGE+{max(SMO,DMO)}[Water]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -612,10 +614,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "3d8+{max(SMO,DMO)}",
-      "5": "5d6+{max(SMO,DMO)}",
-      "10": "4d12+{max(SMO,DMO)}",
-      "17": "8d8+{max(SMO,DMO)}"
+      "1": "3d8",
+      "5": "5d6",
+      "10": "4d12",
+      "17": "8d8"
     },
     "PP": 3
   },
@@ -632,25 +634,20 @@
         "target": "all",
         "effects": [{
           "type": "save",
-          "meta": [{
-            "type": "roll",
-            "dice": "1d4",
-            "name": "prone"
-          }],
           "stat": "dex",
           "fail": [{
             "type": "damage",
-            "damage": "{damage}+{max(SMO,DMO)} [Water]"
+            "damage": "{DAMAGE}+{max(SMO,DMO)} [Water]"
           }, {
             "type": "ieffect",
             "name": "Proned",
-            "duration": "prone",
+            "duration": "3",
             "effects": "",
             "end": true
           }],
           "success": [{
             "type": "damage",
-            "damage": "({damage}+{max(SMO,DMO)})/2 [Water]"
+            "damage": "({DAMAGE}+{max(SMO,DMO)})/2 [Water]"
           }],
           "dc": "{8+ATTACK}"
         }]
@@ -681,7 +678,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Normal]"
+            "damage": "DAMAGE+{max(SMO,DMO)}[Normal]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -696,10 +693,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "1d8+{max(SMO,DMO)}",
-      "5": "2d6+{max(SMO,DMO)}",
-      "10": "4d4+{max(SMO,DMO)}",
-      "17": "3d10+{max(SMO,DMO)}"
+      "1": "1d8",
+      "5": "2d6",
+      "10": "4d4",
+      "17": "3d10"
     },
     "PP": 5
   },
@@ -716,7 +713,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Water]",
+            "damage": "DAMAGE+{SMO}[Water]",
             "overheal": false
           }, {
             "type": "save",
@@ -729,7 +726,7 @@
               "end": false
             }],
             "success": [],
-            "dc": "{8+proficiencyBonus+SMO}"
+            "dc": "{8+ATTACK}"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -741,10 +738,10 @@
     },
     "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "1d6+{SMO}",
-      "5": "1d10+{SMO}",
-      "10": "2d8+{SMO}",
-      "17": "5d4+{SMO}"
+      "1": "1d6",
+      "5": "1d10",
+      "10": "2d8",
+      "17": "5d4"
     },
     "PP": 10
   },
@@ -763,12 +760,6 @@
         }]
       }, {
         "type": "target",
-        "meta": [{
-          "type": "roll",
-          "dice": "1d4",
-          "name": "prone",
-          "hidden": true
-        }],
         "target": "all",
         "effects": [{
           "type": "save",
@@ -776,12 +767,12 @@
           "fail": [{
             "type": "ieffect",
             "name": "Prone",
-            "duration": "{prone}",
+            "duration": "3",
             "effects": "",
             "end": false
           }],
           "success": [],
-          "dc": "{8+DMO+proficiencyBonus}"
+          "dc": "{8+ATTACK}"
         }]
       }, {
         "type": "text",
@@ -791,6 +782,7 @@
       "proper": false,
       "verb": "creates"
     },
+    "attack": "proficiencyBonus+DMO"
     "PP": 10
   },
   "Wide Guard": {
@@ -800,8 +792,8 @@
         "type": "target",
         "meta": [{
           "type": "roll",
-          "dice": "DAMAGE",
-          "name": "Protect"
+          "dice": "1d20",
+          "name": "Wide Guard"
         }],
         "target": "self",
         "effects": []
@@ -825,7 +817,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Electric]"
+            "damage": "DAMAGE+{SMO}[Electric]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -838,12 +830,12 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "2d8+{max(SMO,SMO)}",
-      "5": "2d10+{max(SMO,SMO)}",
-      "10": "3d10+{max(SMO,SMO)}",
-      "17": "4d12+{max(SMO,SMO)}"
+      "1": "2d8",
+      "5": "2d10",
+      "10": "3d10",
+      "17": "4d12"
     },
     "PP": 10
   },
@@ -867,7 +859,7 @@
         }]
       }, {
         "type": "text",
-        "text": "You send a sinister, white-hot flame at a creature attempting to inflict a burn. Make a ranged attack roll on a target, causing burn on a hit.\n"
+        "text": "You send a sinister, white-hot flame at a creature attempting to inflict a burn. Make a ranged attack roll on a target, causing burn on a hit."
       }],
       "verb": null,
       "proper": false,
@@ -886,7 +878,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Flying]",
+            "damage": "DAMAGE+{max(SMO,DMO)}[Flying]",
             "overheal": false,
             "higher": null,
             "cantripScale": null
@@ -904,10 +896,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "1d10+{max(SMO,DMO)}",
-      "5": "2d8+{max(SMO,DMO)}",
-      "10": "5d4+{max(SMO,DMO)}",
-      "17": "4d8+{max(SMO,DMO)}"
+      "1": "1d10",
+      "5": "2d8",
+      "10": "5d4",
+      "17": "4d8"
     },
     "PP": 20
   },
@@ -921,7 +913,7 @@
           "type": "ieffect",
           "name": "Healing Wish",
           "duration": "2",
-          "effects": "-attack \"|-(3d8+{max(WMO,ChMO)}) [Healing]|\"",
+          "effects": "-attack \"|-(DAMAGE+{max(WMO,ChMO)}) [Healing]|\"",
           "end": true,
           "conc": false
         }]
@@ -932,6 +924,12 @@
       "verb": "makes",
       "proper": false,
       "_v": 2
+    },
+    "damage": {
+      "1": "3d8",
+      "5": "5d6",
+      "10": "4d12",
+      "17": "8d8"
     },
     "PP": 5
   },
@@ -982,7 +980,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Grass]"
+            "damage": "DAMAGE+{SMO}[Grass]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -995,12 +993,12 @@
       "proper": true,
       "verb": "strikes"
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "2d10+{max(SMO,SMO)}",
-      "5": "3d8+{max(SMO,SMO)}",
-      "10": "4d10+{max(SMO,SMO)}",
-      "17": "7d8+{max(SMO,SMO)}"
+      "1": "2d10",
+      "5": "3d8",
+      "10": "4d10",
+      "17": "7d8"
     },
     "PP": 10
   },
@@ -1045,7 +1043,7 @@
             "end": true
           }],
           "success": [],
-          "dc": "{8+proficiencyBonus+max(DMO,ChMO)}"
+          "dc": "{8+ATTACK}"
         }]
       }, {
         "type": "text",
@@ -1055,6 +1053,7 @@
       "proper": true,
       "verb": null
     },
+    "attack": "proficiencyBonus+max(DMO,ChMO)",
     "PP": 5
   },
   "Wrap": {
@@ -1070,7 +1069,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Normal]",
+            "damage": "DAMAGE+{max(SMO,DMO)}[Normal]",
             "overheal": false
           }, {
             "type": "save",
@@ -1083,7 +1082,7 @@
               "end": false
             }],
             "success": [],
-            "dc": "{8+proficiencyBonus+max(SMO,DMO)}"
+            "dc": "{8+ATTACK}"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -1095,10 +1094,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "1d4+{max(SMO,DMO)}",
-      "5": "1d6+{max(SMO,DMO)}",
-      "10": "1d8+{max(SMO,DMO)}",
-      "17": "2d6+{max(SMO,DMO)}"
+      "1": "1d4",
+      "5": "1d6",
+      "10": "1d8",
+      "17": "2d6"
     },
     "PP": 15
   },
@@ -1112,7 +1111,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Normal]"
+            "damage": "DAMAGE+{SMO}[Normal]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -1125,12 +1124,12 @@
       "proper": true,
       "verb": null
     },
-    "attack": "proficiencyBonus+max(SMO,SMO)",
+    "attack": "proficiencyBonus+SMO",
     "damage": {
-      "1": "3d8+{max(SMO,SMO)}",
-      "5": "5d6+{max(SMO,SMO)}",
-      "10": "4d12+{max(SMO,SMO)}",
-      "17": "8d8+{max(SMO,SMO)}"
+      "1": "3d8",
+      "5": "5d6",
+      "10": "4d12",
+      "17": "8d8"
     },
     "PP": 3
   },
@@ -1144,7 +1143,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Bug]"
+            "damage": "DAMAGE+{max(SMO,DMO)}[Bug]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -1159,10 +1158,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "2d6+{max(SMO,DMO)}",
-      "5": "2d8+{max(SMO,DMO)}",
-      "10": "4d6+{max(SMO,DMO)}",
-      "17": "6d6+{max(SMO,DMO)}"
+      "1": "2d6",
+      "5": "2d8",
+      "10": "4d6",
+      "17": "6d6"
     },
     "PP": 10
   },
@@ -1208,7 +1207,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Electric]",
+            "damage": "DAMAGE+{max(SMO,DMO)}[Electric]",
             "overheal": false
           }],
           "miss": [],
@@ -1224,10 +1223,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,DMO)",
     "damage": {
-      "1": "2d10+{max(SMO,DMO)}",
-      "5": "3d8+{max(SMO,DMO)}",
-      "10": "4d10+{max(SMO,DMO)}",
-      "17": "7d8+{max(SMO,DMO)}"
+      "1": "2d10",
+      "5": "3d8",
+      "10": "4d10",
+      "17": "7d8"
     },
     "PP": 3
   },
@@ -1241,7 +1240,7 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Psychic]"
+            "damage": "DAMAGE+{max(SMO,WMO)}[Psychic]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
@@ -1256,10 +1255,10 @@
     },
     "attack": "proficiencyBonus+max(SMO,WMO)",
     "damage": {
-      "1": "2d6+{max(SMO,WMO)}",
-      "5": "2d8+{max(SMO,WMO)}",
-      "10": "4d6+{max(SMO,WMO)}",
-      "17": "6d6+{max(SMO,WMO)}"
+      "1": "2d6",
+      "5": "2d8",
+      "10": "4d6",
+      "17": "6d6"
     },
     "PP": 10
   },
@@ -1273,14 +1272,14 @@
           "type": "attack",
           "hit": [{
             "type": "damage",
-            "damage": "DAMAGE[Electric]"
+            "damage": "DAMAGE+{DMO}[Electric]"
           }],
           "miss": [],
           "attackBonus": "ATTACK"
         }]
       }, {
         "type": "text",
-        "text": "A strong electric blast crashes down on two unique targets in range, giving them an electric shock. make two ranged attacks going 1d10 + MOVE electric damage on a hit. If the natural attack roll is 18 or higher, the target flinches."
+        "text": "A strong electric blast crashes down on two unique targets in range, giving them an electric shock. Make two ranged attacks going 1d10 + MOVE electric damage on a hit. If the natural attack roll is 18 or higher, the target flinches."
       }],
       "_v": 2,
       "proper": false,
@@ -1288,10 +1287,10 @@
     },
     "attack": "proficiencyBonus+DMO",
     "damage": {
-      "1": "1d10+{DMO}",
-      "5": "2d8+{DMO}",
-      "10": "4d6+{DMO}",
-      "17": "6d6+{DMO}"
+      "1": "1d10",
+      "5": "2d8",
+      "10": "4d6",
+      "17": "6d6"
     },
     "PP": 5
   }
